@@ -1,0 +1,14 @@
+name: Docker Image Trigger
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Trigger Docker image Build
+      run: curl -d "" ${{ secrets.DOCKER_TRIGGER_BUILD_URL }}
