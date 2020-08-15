@@ -11,4 +11,4 @@ jobs:
 
     steps:
     - name: Trigger Docker image Build
-      run: curl -d "" ${{ secrets.DOCKER_TRIGGER_BUILD_URL }}
+      run: curl -d "" ${{ secrets.DOCKER_TRIGGER_BUILD_URL }}>>/dev/null
