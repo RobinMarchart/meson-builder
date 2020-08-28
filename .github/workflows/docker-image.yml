@@ -1,6 +1,7 @@
 name: Deploy Docker Images
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
   schedule:
@@ -12,7 +13,7 @@ jobs:
     name: deploy ${{ matrix.image }}
     strategy:
       matrix:
-        image: [arch-gcc, arch-clang]
+        image: [arch-gcc, arch-clang, debian-gcc, debian-clang, site-builder]
     steps:
       - uses: actions/checkout@v2.3.2
       - uses: docker/build-push-action@v1.1.0
