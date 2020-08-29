@@ -1,3 +1,3 @@
 FROM debian:stable
 RUN apt-get update -y;apt-get upgrade -y;apt-get install -y meson ninja-build git clang
-ONBUILD RUN apt-get update -y;apt-get upgrade -y
+COPY ci-build.sh /ci-build

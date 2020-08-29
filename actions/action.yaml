@@ -1,0 +1,31 @@
+name: 'Meson Builder'
+
+description:
+  'builds meson projects and runs tests, optionally using sanitizers'
+
+inputs:
+  image_name:
+    description:
+      'image from this repository to use'
+    required: true
+  sanitizer:
+    description:
+      'sanitizer to use, like none, address, thread...'
+    default: 'none'
+    required: false
+  options:
+    description:
+      'further options to pass to meson'
+    default: '-Dcpp_debugstl=false'
+    required: false
+  build_dir:
+    description: 'meson build dir, persists after run'
+    default: 'build'
+    required: false
+    
+runs:
+  using: 'docker'
+  image: '../${{ env.INPUT_IMAGE_NAME }}/Dockerfile'
+  entrypoint: '/ci-build'
+  
+    
