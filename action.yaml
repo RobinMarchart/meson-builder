@@ -4,7 +4,7 @@ description:
   'builds meson projects and runs tests, optionally using sanitizers'
 
 inputs:
-  image_name:
+  image:
     description:
       'image from this repository to use'
     required: true
