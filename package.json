@@ -1,0 +1,23 @@
+{
+  "name": "meson-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "action.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinMarchart/meson-builder.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobinMarchart/meson-builder/issues"
+  },
+  "homepage": "https://github.com/RobinMarchart/meson-builder#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.5",
+    "@actions/exec": "^1.0.4"
+  }
+}

@@ -16,16 +16,22 @@ inputs:
   options:
     description:
       'further options to pass to meson'
-    default: '-Dcpp_debugstl=false'
+    default: '-Dcpp_debugstl=true'
     required: false
   build_dir:
     description: 'meson build dir, persists after run'
     default: 'build'
     required: false
+  username:
+    description: 'username for docker registry'
+    required: false
+  password:
+    description: 'password for docker registry'
+    required: false
+  registry:
+    description: 'docker registry'
+    required: false
     
 runs:
-  using: 'docker'
-  image: '../${{ env.INPUT_IMAGE_NAME }}/Dockerfile'
-  entrypoint: '/ci-build'
-  
-    
+  using: 'node12'
+  main: 'action.js'
