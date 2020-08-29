@@ -94,9 +94,9 @@ static async init(image){
 }
 
 const image_map=new Map([
-    ["arch-gcc","docker.pkg.github.com/robinmarchart/meson-builder/arch-gcc:latest"]
-    ["arch-clang","docker.pkg.github.com/robinmarchart/meson-builder/arch-clang:latest"]
-    ["debian-clang","docker.pkg.github.com/robinmarchart/meson-builder/debian-clang:latest"]
+    ["arch-gcc","docker.pkg.github.com/robinmarchart/meson-builder/arch-gcc:latest"],
+    ["arch-clang","docker.pkg.github.com/robinmarchart/meson-builder/arch-clang:latest"],
+    ["debian-clang","docker.pkg.github.com/robinmarchart/meson-builder/debian-clang:latest"],
     ["debian-gcc","docker.pkg.github.com/robinmarchart/meson-builder/debian-gcc:latest"]
 ]);
 
