@@ -102,7 +102,7 @@ const image_map=new Map([
 
 async function main(){
     let build_dir=core.getInput("build_dir",{required:true});
-    let docker=await docker.init(image_map.get(core.getInput("image",{required=true})));
+    let docker=await docker.init(image_map.get(core.getInput("image",{required:true})));
     await docker.run_block(`meson setup ${get_meson_options()} "${build_dir}"`,"initialize meson");
     await docker.run_block(`meson configure "${build_dir}"`,"show project options");
     await docker.run_block(`meson compile -C "${build_dir}"`,"compile project");
