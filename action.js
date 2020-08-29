@@ -52,10 +52,10 @@ static async init(image){
         else if(username&&password){
             auth={username:username,password:password};
             if(registry)auth.registry=registry;
-        }else(
+        }else{
             core.setFailed('If one of "usernamer", "password", "registry" is specified, the first two are required!');
             exit(1);
-        )
+        }
     }
     
     core.startGroup("setup docker environment");
