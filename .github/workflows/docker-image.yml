@@ -24,4 +24,4 @@ jobs:
           registry: docker.pkg.github.com
           repository: robinmarchart/meson-builder/${{ matrix.image }}
           path: ${{ matrix.image }}
-          labels:  latest
+          tag_with_ref: true
