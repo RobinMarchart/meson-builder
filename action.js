@@ -60,6 +60,7 @@ static async init(image){
     
     core.startGroup("setup docker environment");
        if(auth!==null){
+           core.info('logging in to docker registry')
            core.setCommandEcho(false);
            let status=await exec.exec(`docker login -u ${auth.username} -p ${auth.password} ${auth.registry}`)
            core.setCommandEcho(core.isDebug());
@@ -88,6 +89,7 @@ static async init(image){
 
     async run_block(command,block,options={}){
         core.startGroup(block);
+        core.info(`running ${block}`);
         this.run(command,options);
         core.endGroup();
     }
@@ -102,6 +104,7 @@ const image_map=new Map([
 
 async function main(){
     let build_dir=core.getInput("build_dir",{required:true});
+    core.info(`using build-dir ${build_dir}`);
     let docker=await docker.init(image_map.get(core.getInput("image",{required:true})));
     await docker.run_block(`meson setup ${get_meson_options()} "${build_dir}"`,"initialize meson");
     await docker.run_block(`meson configure "${build_dir}"`,"show project options");
