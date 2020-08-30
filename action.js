@@ -48,12 +48,13 @@ static async init(image){
         let username=core.getInput("username");
         let password=core.getInput("password");
         let registry=core.getInput("registry");
+        core.info(`got login info`)
         if((!username)&&(!pasword)&&(!registry));
         else if(username&&password){
             auth={username:username,password:password};
             if(registry)auth.registry=registry;
         }else{
-            core.setFailed('If one of "usernamer", "password", "registry" is specified, the first two are required!');
+            core.setFailed('If one of "username", "password", "registry" is specified, the first two are required!');
             exit(1);
         }
     }
